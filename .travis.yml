@@ -23,6 +23,7 @@ matrix:
     - php: 5.6
     - php: 7.0
     - php: 7.1
+      env: PSALM=1
     - php: 7.2
     - php: 7.3
       env: PHPSTAN=1
@@ -64,6 +65,12 @@ script:
   - if [[ $PHPSTAN == "1" ]]; then
       composer require --dev phpstan/phpstan-shim:^0.11 --ignore-platform-reqs &&
       vendor/bin/phpstan.phar analyse src tests --configuration=phpstan/config.neon --autoload-file=phpstan/autoload.php;
+    fi
+  # Run Psalm
+  - if [[ $PSALM == "1" ]]; then
+      rm -rf ./psalm-container && mkdir ./psalm-container && cd ./psalm-container && composer init --no-interaction &&
+      composer require --dev vimeo/psalm:^3.0 --ignore-platform-reqs && cd ../ &&
+      ./psalm-container/vendor/bin/psalm --config=psalm/psalm.xml --show-info=false && rm -rf ./psalm-container;
     fi
 
 before_deploy:

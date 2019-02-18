@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<files>
+  <file src="src/Composer/Command/DiagnoseCommand.php">
+    <TypeDoesNotContainType occurrences="1">
+      <code>Composer::VERSION !== $latest['version'] &amp;&amp; Composer::VERSION !== '@package_version@'</code>
+    </TypeDoesNotContainType>
+  </file>
+  <file src="src/Composer/Command/InitCommand.php">
+    <InvalidArgument occurrences="1">
+      <code>array($gitBin, 'config', '-l')</code>
+    </InvalidArgument>
+  </file>
+  <file src="src/Composer/Compiler.php">
+    <InvalidArgument occurrences="1">
+      <code>$this-&gt;versionDate</code>
+    </InvalidArgument>
+  </file>
+  <file src="src/Composer/Console/Application.php">
+    <RedundantCondition occurrences="1">
+      <code>Composer::BRANCH_ALIAS_VERSION</code>
+    </RedundantCondition>
+  </file>
+  <file src="src/Composer/Downloader/PathDownloader.php">
+    <UndefinedConstant occurrences="3">
+      <code>PHP_WINDOWS_VERSION_MAJOR</code>
+      <code>PHP_WINDOWS_VERSION_MAJOR</code>
+      <code>PHP_WINDOWS_VERSION_MINOR</code>
+    </UndefinedConstant>
+  </file>
+  <file src="src/Composer/IO/ConsoleIO.php">
+    <TypeDoesNotContainType occurrences="1">
+      <code>OutputInterface::VERBOSITY_QUIET === 0</code>
+    </TypeDoesNotContainType>
+  </file>
+  <file src="src/Composer/Package/CompletePackage.php">
+    <ImplementedReturnTypeMismatch occurrences="1">
+      <code>string|null</code>
+    </ImplementedReturnTypeMismatch>
+  </file>
+  <file src="src/Composer/Package/Locker.php">
+    <RedundantCondition occurrences="1">
+      <code>empty($lock['packages']) &amp;&amp; empty($lock['packages-dev']) &amp;&amp; empty($lock['platform']) &amp;&amp; empty($lock['platform-dev'])</code>
+    </RedundantCondition>
+  </file>
+  <file src="src/Composer/Repository/Vcs/PerforceDriver.php">
+    <InvalidFalsableReturnType occurrences="1">
+      <code>getContents</code>
+    </InvalidFalsableReturnType>
+  </file>
+</files>
